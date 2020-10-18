@@ -1,9 +1,16 @@
 [package]
 name = "backup-fam"
 version = "0.1.0"
-authors = ["Nick Riley"]
+authors = ["Dave Bement", "Jason Chrispens", "Ben Monnier", "Nick Riley"]
 edition = "2018"
+default-run = "backup-fam"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = "2.33.3"
+
+# CLI for interactions with background file monitoring process
+[[bin]]
+name = "cli"
+
