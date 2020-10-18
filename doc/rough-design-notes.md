@@ -29,12 +29,17 @@ With that leaning, operationally, I think this means that a peer just starts its
 synchronization process and allows other potential peers to connect.  The first 
 connection between potential peers is in the form of a request to join the group.  
 (The assumption is that the connection is only possible with some sort of 
-invitation - e.g. I tell you how to connect to me.)  The request (by the operator) is reviewed and either accepted or rejected.  If accepted, the potential peer becomes an actual peer, and every member of the group is updated.  Note, in this model, anyone is able to add new peers. which I think is fine initially.
+invitation - e.g. I tell you how to connect to me.)  The request (by the operator) 
+is reviewed and either accepted or rejected.  If accepted, the potential peer becomes 
+an actual peer, and every member of the group is updated.  Note, in this model, 
+anyone is able to add new peers. which I think is fine initially.
 If peers can be added, they can also be removed.  This is a potential land mine, 
 but I think initially, anyone can remove a peer, including the peer itself.  The 
-assumption here is that no one is going to be malicious.  The removal gets distributed to all of the members of the group.
+assumption here is that no one is going to be malicious.  The removal gets 
+distributed to all of the members of the group.
 The collective agreement is a big part of this - every member of the group shares 
-in the same agreement.  Initially, I think all this agreement dictates is that you must contribute n * x storage if you want to back up a max of x.  (n is the fault tolerance).
+in the same agreement.  Initially, I think all this agreement dictates is that you 
+must contribute n * x storage if you want to back up a max of x.  (n is the fault tolerance).
 Finally, the files to be backed up need to be configured.  Initially, I think this 
 is as simple as a list of directories.
 
@@ -48,11 +53,16 @@ On-going configuration items:
 - Members of the peer group
 - Status
 
-I think that the various pieces of status are tracked by the sync process.  Things that  might be interesting:
-Are all of the files backed up? (If not, when?)
-- How much can I back up with the agreed upon tolerance with the current peers?  (The problem here is that there may be asymmetry between the amount of storage contributed by various peers - e.g. if a peer A contributes 10 TB with three other peers contributing 10 GB, the big peer will be a bit limited.)
+I think that the various pieces of status are tracked by the sync process.  Things that
+might be interesting:
+- Are all of the files backed up? (If not, when?)
+- How much can I back up with the agreed upon tolerance with the current peers?  
+  (The problem here is that there may be asymmetry between the amount of storage 
+  contributed by various peers - e.g. if a peer A contributes 10 TB with three other 
+  peers contributing 10 GB, the big peer will be a bit limited.)
 - How much space is my current backup occupying?
-- How much of my contributed space is currently used?  (Maybe I reduce my contribution if not all of it is used.)
+- How much of my contributed space is currently used?  (Maybe I reduce my contribution 
+  if not all of it is used.)
 - Who are all of the peers?
 
 # Recovery
