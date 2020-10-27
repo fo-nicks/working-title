@@ -9,6 +9,9 @@ default-run = "backup-fam"
 
 [dependencies]
 clap = "2.33.3"
+fuse = "0.3.1"
+libc = "0.2.33"
+time = "0.1.38"
 
 # CLI for interactions with background file monitoring process
 [[bin]]
