@@ -17,6 +17,7 @@ fn main() -> Result<()> {
         )
         .get_matches();
 
+    // TODO: add directory exists assertions.
     let watched_dirs: Vec<PathBuf> = matches
         .values_of("directory")
         .unwrap()
