@@ -13,7 +13,7 @@ fn main() -> Result<()> {
             Arg::with_name("directory")
                 .short("d")
                 .multiple(true)
-                .takes_value(true)
+                .takes_value(true),
         )
         .get_matches();
 
@@ -22,13 +22,13 @@ fn main() -> Result<()> {
         .unwrap()
         .map(|dir_arg| PathBuf::from(dir_arg))
         .collect();
-    
+
     let config = app::Config {
         watched_dirs,
         // TODO: add contribution arg handling and byte unit ('gb', 'mb', ...) parsing.
-        contribution_in_bytes: 10
+        contribution_in_bytes: 10,
     };
-    
+
     app::init(&config)?;
     Ok(())
 }
