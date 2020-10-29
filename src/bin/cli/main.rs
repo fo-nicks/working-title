@@ -6,7 +6,7 @@ mod watched_fs;
 const VERSION: &'static str = env!("CARGO_PKG_VERSION");
 
 fn main() {
-    let matches = App::new("Backup Fam")
+    let matches = App::new("Backup Fam -- CLI")
         .version(VERSION)
         .subcommand(
             SubCommand::with_name("add-watch")
