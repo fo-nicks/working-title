@@ -24,3 +24,10 @@
 /// 
 /// Within the commands themselves is the ability to track outstanding commands etc.
 /// this is expanded below, in the explanation for the commands.
+/// 
+/// Two aspects that this protocol does not address is security/encryption and authenciation.
+/// It is assumed that the lower level transport mechanism will do this.  That is, part of
+/// establishing a bi-directional channel will be to authenticate and ensure that security
+/// needs are met.  This protocol will use a so-established channel.  (Note that this 
+/// does not mean that user data communicated by this protocol won't be encrypted, it means
+/// that the parts of this protocol, op-codes, command IDs, etc. won't be.)
